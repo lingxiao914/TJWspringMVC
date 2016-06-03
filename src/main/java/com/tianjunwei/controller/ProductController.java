@@ -1,4 +1,4 @@
-package app04a.controller;
+package com.tianjunwei.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import app04a.domain.Product;
-import app04a.form.ProductForm;
+import com.tianjunwei.domain.Product;
+import com.tianjunwei.form.ProductForm;
 
 @Controller
 public class ProductController {

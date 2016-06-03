@@ -1,4 +1,4 @@
-package app04a.form;
+package com.tianjunwei.form;
 
 public class ProductForm {
     private String name;

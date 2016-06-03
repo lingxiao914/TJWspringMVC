@@ -1,4 +1,4 @@
-package app04a.domain;
+package com.tianjunwei.domain;
 import java.io.Serializable;
 
 public class Product implements Serializable {

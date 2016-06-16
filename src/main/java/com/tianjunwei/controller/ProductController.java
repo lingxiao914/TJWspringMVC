@@ -18,7 +18,7 @@ public class ProductController {
 
     private static final Log logger = LogFactory.getLog(ProductController.class);
 
-    @RequestMapping(value = "input")
+    @RequestMapping(value = "/input")
     public String inputProduct() {
         logger.info("inputProduct called");
         return "ProductForm";  //对应jsp页面名称

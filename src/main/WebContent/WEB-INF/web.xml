@@ -43,11 +43,11 @@
 		<init-param>
 			<param-name>casServerLoginUrl</param-name>
 			<param-value>https://localhost:80/cas/login</param-value>
-			<!--这里的server是服务端的IP-->
 		</init-param>
+		<!-- 验证之后的地址 -->
 		<init-param>
 			<param-name>serverName</param-name>
-			<param-value>http://localhost:8080</param-value>
+			<param-value>http://localhost:8090</param-value>
 		</init-param>
 	</filter>
 	
@@ -67,7 +67,7 @@
 		</init-param>
 		<init-param>
 			<param-name>serverName</param-name>
-			<param-value>http://localhost:8080</param-value>
+			<param-value>http://localhost:8090</param-value>
 		</init-param>
 	</filter>
 	

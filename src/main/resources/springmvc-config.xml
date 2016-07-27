@@ -11,15 +11,18 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:component-scan base-package="com.tianjunwei" />
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/css/**" location="/css/" />
-	<mvc:resources mapping="/*.html" location="/" />
-
+	<!-- DispatcherServlet不拦截以下静态资源 -->
+	<mvc:resources location="/image/" mapping="/image/**"/> 
+	<mvc:resources location="/css/" mapping="/css/**"/> 
+	<mvc:resources location="/js/" mapping="/js/**"/>
 	<mvc:interceptors>
 		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
 	</mvc:interceptors>
 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+
+
 
 
 	<!-- 将默认的jackjson替换为fastjson -->

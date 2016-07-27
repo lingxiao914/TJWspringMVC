@@ -22,9 +22,6 @@
 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
 
-
-
-
 	<!-- 将默认的jackjson替换为fastjson -->
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">

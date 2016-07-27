@@ -35,7 +35,7 @@
             <onMatch>ACCEPT</onMatch>
             <onMismatch>DENY </onMismatch>
         </filter>
-        <File>c:\\log\vms\error.log</File>
+        <File>c:\\log\\error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>c:\\log\error.%d{yyyy-MM-dd}.%i.zip</FileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">

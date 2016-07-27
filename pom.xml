@@ -16,6 +16,12 @@
 
 		<dependency>
 			<groupId>com.tianjunwei</groupId>
+			<artifactId>TTcache</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.tianjunwei</groupId>
 			<artifactId>TTcas-client</artifactId>
 			<version>1.0.0</version>
 		</dependency>

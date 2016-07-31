@@ -23,7 +23,7 @@ public class ValidateController {
         if(!model.containsAttribute("contentModel")){
             model.addAttribute("contentModel", new ValidateModel());
         }
-        return "validatetest";
+        return "validator/validatetest";
     }
     
     @RequestMapping(value="/test", method = {RequestMethod.POST})
@@ -32,7 +32,7 @@ public class ValidateController {
         //如果有验证错误 返回到form页面
         if(result.hasErrors())
             return test(model);
-        return "validatesuccess";     
+        return "validator/validatesuccess";     
     }
     
 }

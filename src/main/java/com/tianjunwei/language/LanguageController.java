@@ -45,7 +45,7 @@ public class LanguageController {
 		}
 		RequestContext requestContext = new RequestContext(request);
 		model.addAttribute("language", requestContext.getMessage("message"));
-		return "language";
+		return "jsp/language";
 	}
 
 }

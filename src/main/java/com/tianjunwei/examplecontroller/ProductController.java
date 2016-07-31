@@ -21,7 +21,7 @@ public class ProductController {
     @RequestMapping(value = "input")
     public String inputProduct() {
         logger.info("inputProduct called");
-        return "ProductForm";  //对应jsp页面名称
+        return "jsp/ProductForm";  //对应jsp页面名称
     }
     
     @RequestMapping(value="/save")
@@ -36,7 +36,7 @@ public class ProductController {
         } catch (NumberFormatException e) {
         }
         model.addAttribute("product", product);
-        return "ProductDetails";//对应jsp页面名称
+        return "jsp/ProductDetails";//对应jsp页面名称
     }
     
     @ResponseBody

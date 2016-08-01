@@ -43,9 +43,9 @@ public class ProductController {
 	@RequestMapping("/get")
 	public Object get(){
 		Product product = new Product();
-		product.setDescription("hello swdf2 springMVC  RestFul");
+		product.setDescription("hello  springMVC  RestFul");
 		product.setId(10);
-		product.setName("swdf2");
+		product.setName("springMVC");
 		product.setPrice(10);
 		return product; //在页面中返回json数据
 	}
@@ -53,9 +53,9 @@ public class ProductController {
 	@RequestMapping("/delete/{id}")
 	public Object delete(@PathVariable("id") long id){
 		Product product = new Product();
-		product.setDescription("hello swdf2 springMVC  RestFul");
+		product.setDescription("hello  springMVC  RestFul");
 		product.setId(id);
-		product.setName("swdf2");
+		product.setName("springMVC");
 		product.setPrice(10);
 		return product;//在页面中返回json数据
 	}

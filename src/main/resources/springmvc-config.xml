@@ -19,10 +19,16 @@
     </bean>
     <bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean" />
     <bean id="validatemessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
-        <property name="basename" value="classpath:validation/validate-messages"/>  
+        <property name="basename" value="classpath:validation/validate-messages"/>
         <property name="fileEncodings" value="utf-8"/>  
         <property name="cacheSeconds" value="120"/>  
     </bean>
+    
+    <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor">  
+    	<!-- 可以引用自己的 validator 配置，在本文中（下面）可以找到 validator 的参考配置，如果不指定则系统使用默认的 -->
+    	<property name="validator" ref="validator"/>  
+	</bean>
+    
 	
 	<mvc:annotation-driven />
 	<!-- DispatcherServlet不拦截以下静态资源 -->

@@ -15,7 +15,7 @@
 
 $(document).ready(function(){
 	  $("select").change(function(){
-		  var language = this.val;
+		  var language = $("select").val();
 		  location.href = "language.action?language="+language;
 	  });
 	});
@@ -25,15 +25,9 @@ $(document).ready(function(){
 	语言: ${language}
 
 	<select  name= "language" id="language" class="select" >
+		<option value="">默认</option>
 		<option value="zh">中文</option>
 		<option value="en">English</option>
 	</select>
-	
-	<div id="jjjj">
-	sdsjd
-	</div>
-	
-	<p>If you click on me, I will disappear.</p>
-	
 </body>
 </html>

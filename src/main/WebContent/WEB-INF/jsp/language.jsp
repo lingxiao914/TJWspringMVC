@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 <title>title</title>
@@ -22,12 +23,17 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	语言: ${language}
+	语言: ${message}
 
 	<select  name= "language" id="language" class="select" >
-		<option value="">默认</option>
-		<option value="zh">中文</option>
+		<c:if test="${language == 'zh'}">
+		<option value="zh" selected="selected">中文</option>
 		<option value="en">English</option>
+		</c:if>
+		<c:if test="${language == 'en'}">
+		<option value="zh" >中文</option>
+		<option value="en" selected="selected">English</option>
+		</c:if>
 	</select>
 </body>
 </html>

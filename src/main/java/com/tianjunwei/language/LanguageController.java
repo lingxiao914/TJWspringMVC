@@ -42,9 +42,11 @@ public class LanguageController {
 			request.getSession().setAttribute(
 					SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME,
 					LocaleContextHolder.getLocale());
+			language = LocaleContextHolder.getLocale().getLanguage();
 		}
 		RequestContext requestContext = new RequestContext(request);
-		model.addAttribute("language", requestContext.getMessage("message"));
+		model.addAttribute("message", requestContext.getMessage("message"));
+		model.addAttribute("language", language);
 		return "jsp/language";
 	}
 

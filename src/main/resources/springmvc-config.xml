@@ -10,6 +10,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 	<context:component-scan base-package="com.tianjunwei" />
+	
+	
 	<!-- 校验 -->
 	<mvc:annotation-driven validator="validator" conversion-service="conversion-service" />
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
@@ -23,25 +25,17 @@
         <property name="fileEncodings" value="utf-8"/>  
         <property name="cacheSeconds" value="120"/>  
     </bean>
-    
     <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor">  
     	<!-- 可以引用自己的 validator 配置，在本文中（下面）可以找到 validator 的参考配置，如果不指定则系统使用默认的 -->
     	<property name="validator" ref="validator"/>  
 	</bean>
     
-	
 	<mvc:annotation-driven />
 	<!-- DispatcherServlet不拦截以下静态资源 -->
 	<mvc:resources location="/image/" mapping="/image/**"/> 
 	<mvc:resources location="/css/" mapping="/css/**"/> 
 	<mvc:resources location="/js/" mapping="/js/**"/>
-	<mvc:interceptors>
-		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
-		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-	</mvc:interceptors>
-
-	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
-
+	
 	<!-- 将默认的jackjson替换为fastjson -->
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
@@ -64,6 +58,12 @@
 	</mvc:annotation-driven>
 
 
+	<mvc:interceptors>
+		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+	</mvc:interceptors>
+
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
 
 	<!-- 多语言 -->
 	<bean id="messageSource"

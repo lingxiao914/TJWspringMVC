@@ -22,9 +22,6 @@
 
     <bean id="beansUtils" class="tianjunwei.util.BeansUitls"></bean>
 	<bean id="redisTemplate" class="tianjunwei.cache.redis.RedisTemplate" init-method="init"></bean>
-	<bean id="personserver" class="com.tianjunwei.spring.PersonServerImpl"  init-method="init" ></bean>
-	<bean class="com.tianjunwei.spring.listener.ListenerTest" />
-	
 	
 	
 </beans>

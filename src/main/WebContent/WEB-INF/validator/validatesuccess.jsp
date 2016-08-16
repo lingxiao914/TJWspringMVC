@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-    验证成功！
+    ${success} 
 </body>
 </html>

@@ -83,4 +83,7 @@
 		<property name="prefix" value="/WEB-INF/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<bean name="/input.action" class="com.tianjunwei.controller.ProductImplementController"></bean>
+	
 </beans>

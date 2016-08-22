@@ -1,4 +1,4 @@
-package com.tianjunwei.examplecontroller.entity;
+package com.tianjunwei.controller.entity;
 
 public class ProductForm {
     private String name;

@@ -1,4 +1,4 @@
-package com.tianjunwei.examplecontroller.entity;
+package com.tianjunwei.controller.entity;
 import java.io.Serializable;
 
 public class Product implements Serializable {

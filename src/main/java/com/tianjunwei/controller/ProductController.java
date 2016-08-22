@@ -1,4 +1,4 @@
-package com.tianjunwei.examplecontroller;
+package com.tianjunwei.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
-import com.tianjunwei.examplecontroller.entity.Product;
-import com.tianjunwei.examplecontroller.entity.ProductForm;
+import com.tianjunwei.controller.entity.Product;
+import com.tianjunwei.controller.entity.ProductForm;
 
 @Controller
 @RequestMapping("/product")

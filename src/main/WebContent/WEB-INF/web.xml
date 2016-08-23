@@ -31,7 +31,7 @@
     
     <!--用于单点退出，该过滤器用于实现单点登出功能，可选配置-->
     
-	<listener>
+	<!-- <listener>
 		<listener-class>com.tianjunwei.org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
 	</listener>
 
@@ -114,7 +114,7 @@
 	<filter-mapping>
 		<filter-name>CAS Assertion Thread Local Filter</filter-name>
 		<url-pattern>*.jsp</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 	
 	<!--======================== 单点登录结束 ======================== -->
 	

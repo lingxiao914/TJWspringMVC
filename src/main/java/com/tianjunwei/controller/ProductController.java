@@ -4,11 +4,16 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.sun.beans.editors.LongEditor;
+import com.sun.org.apache.xml.internal.security.Init;
 import com.tianjunwei.controller.entity.Product;
 import com.tianjunwei.controller.entity.ProductForm;
 
@@ -18,6 +23,17 @@ public class ProductController {
 
     private static final Log logger = LogFactory.getLog(ProductController.class);
 
+    @InitBinder    
+    protected void initBinder(WebDataBinder binder) {    
+    	 binder.registerCustomEditor(long.class, new LongEditor());
+    }   
+    
+    @ModelAttribute
+    public void init(){
+    	System.out.println("init");
+    }
+    
+    
     @RequestMapping(value = "input")
     public String inputProduct() {
         logger.info("inputProduct called");

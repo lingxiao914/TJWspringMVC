@@ -12,6 +12,28 @@
 	<context:component-scan base-package="com.tianjunwei" />
 	<!-- 校验 -->
 	<mvc:annotation-driven validator="validator" conversion-service="conversion-service" />
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="0"></property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerBeanNameHandlerMapping">
+		<property name="order" value="1"></property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+		<property name="order" value="2"></property>
+	</bean>
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+		<property name="order" value="3"></property>
+	</bean>
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		<property name="order" value="4" />
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="order" value="5" />
+	</bean>
+	
+	
 	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <property name="providerClass"  value="org.hibernate.validator.HibernateValidator"/>
         <!--不设置则默认为classpath下的 ValidationMessages.properties -->
@@ -38,6 +60,7 @@
 	<mvc:interceptors>
 		<!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 -->
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+		<bean class="com.tianjunwei.interceptor.LanguageInterceptor"></bean>
 	</mvc:interceptors>
 
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>

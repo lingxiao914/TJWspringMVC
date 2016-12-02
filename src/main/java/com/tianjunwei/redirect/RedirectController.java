@@ -22,7 +22,8 @@ public class RedirectController {
 	}
 	
 	@RequestMapping("/get")
-	public String get(@ModelAttribute ("book") String book,ModelMap model,SessionStatus sessionStatus){
+	public String get(@ModelAttribute ("book") String book,ModelMap model,
+			SessionStatus sessionStatus){
 		System.out.println(model.get("book")+";"+model.get("description")+";"+model.get("price"));
 		sessionStatus.setComplete();
 		return "redirect:complete.action";
@@ -35,3 +36,4 @@ public class RedirectController {
 	}
 
 }
+

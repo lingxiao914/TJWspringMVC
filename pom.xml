@@ -31,11 +31,11 @@
 			<version>1.0.0</version>
 		</dependency>
 
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.tianjunwei</groupId>
 			<artifactId>TTcas-client</artifactId>
 			<version>1.0.0</version>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>javax.servlet</groupId>

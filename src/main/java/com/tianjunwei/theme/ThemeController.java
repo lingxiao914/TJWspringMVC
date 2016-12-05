@@ -15,33 +15,19 @@
  */
 package com.tianjunwei.theme;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ThemeResolver;
 
 /**
  * @author tianjunwei
- * @time 2016 上午11:32:37
+ * @time 2016 上午11:14:13
  */
 @Controller
-public class ThemeChange {
-	private final Log logger = LogFactory.getLog(getClass());
+public class ThemeController {
 	
-	@Autowired
-	private ThemeResolver themeResolver;
-
-	@RequestMapping("/changeTheme")
-	public String changeTheme(HttpServletRequest request,
-			HttpServletResponse response, String themeName) {
-		logger.info("current theme is " + themeResolver.resolveThemeName(request));
-		themeResolver.setThemeName(request, response, themeName);
-		logger.info("current theme change to " + themeResolver.resolveThemeName(request));
+	@RequestMapping("theme")
+	public String theme(){
 		return "theme";
 	}
+
 }

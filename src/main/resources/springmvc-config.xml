@@ -102,6 +102,15 @@
 		<property name="useCodeAsDefaultMessage" value="true" />
 	</bean>
 
+	<!-- 样式-->
+	<bean class="org.springframework.ui.context.support.ResourceBundleThemeSource"  id="themeSource">  
+    	<property name="basenamePrefix" value="theme."></property>  
+	</bean>  
+  	<bean id="themeResolver"  class="org.springframework.web.servlet.theme.SessionThemeResolver">  
+  		<property name="defaultThemeName" value="red" />  
+	</bean>  
+
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/" />

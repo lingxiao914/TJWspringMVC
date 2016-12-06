@@ -39,6 +39,9 @@ public class ThemeChange {
 	@RequestMapping("/changeTheme")
 	public String changeTheme(HttpServletRequest request,
 			HttpServletResponse response, String themeName) {
+		if(themeName == null){
+			themeName = "red";
+		}
 		logger.info("current theme is " + themeResolver.resolveThemeName(request));
 		themeResolver.setThemeName(request, response, themeName);
 		logger.info("current theme change to " + themeResolver.resolveThemeName(request));

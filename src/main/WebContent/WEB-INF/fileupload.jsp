@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"/>
 </head>
 <body>
-		<form id='fForm' class="form-actions form-horizontal" action="/fileupload.action" 
+		<form id='fForm' class="form-actions form-horizontal" action="/file/upload.action" 
 		      encType="multipart/form-data" target="uploadf" method="post">
 				 <div class="control-group">
 					<label class="control-label">上传文件:</label>

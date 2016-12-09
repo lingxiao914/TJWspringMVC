@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-@RequestMapping("file")
+@RequestMapping("/file")
 public class FileUpload {
 
-	@RequestMapping("upload")
+	@RequestMapping("/upload")
 	@ResponseBody
-	public String upload(@PathVariable("file") MultipartFile... files ){
+	public String upload( MultipartFile... files ){
 		
 		for (MultipartFile f : files) {
 			if (f.getSize() > 0) {
@@ -29,5 +29,10 @@ public class FileUpload {
 		}
 		
 		return null;
+	}
+	
+	@RequestMapping("/uploads")
+	public String uploads(){
+		return "fileupload";
 	}
 }

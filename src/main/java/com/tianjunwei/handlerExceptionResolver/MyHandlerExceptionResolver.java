@@ -18,18 +18,20 @@ package com.tianjunwei.handlerExceptionResolver;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 /**
  * @author tianjunwei
  * @time 2016 下午7:33:36
  */
-public class MyHandlerExceptionResolver extends SimpleMappingExceptionResolver{
+public class MyHandlerExceptionResolver implements HandlerExceptionResolver{
+
 
 	@Override
-	protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response,
-			Object handler, Exception ex) {
+	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
+			Exception ex) {
+		
 		ModelAndView mv = new ModelAndView("exception");
 		mv.addObject("errorMsg", ex.getMessage());
 		return mv;

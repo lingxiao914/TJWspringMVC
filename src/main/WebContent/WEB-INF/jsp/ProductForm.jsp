@@ -7,7 +7,7 @@
 <body>
 
 <div id="global">
-<form action="save" method="post">
+<form action="save.action" method="post">
     <fieldset>
         <legend>Add a product</legend>
         <p>

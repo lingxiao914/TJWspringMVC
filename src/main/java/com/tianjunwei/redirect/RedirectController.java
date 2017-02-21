@@ -2,14 +2,19 @@ package com.tianjunwei.redirect;
 
 import java.util.Random;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.FlashMap;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
 
 @Controller
 @RequestMapping("/book")
@@ -24,18 +29,19 @@ public class RedirectController {
 		model.addAttribute("price", new Double("1000.00"));
 		model.addAttribute("attributeName1", "attributeValue1");
 		//跳转之前将数据保存到book、description和price中，因为注解@SessionAttribute中有这几个参数
+		attr.addFlashAttribute("flashMap", "flashMap");
 		return "redirect:get.action";
 	}
 	
+	@ResponseBody
 	@RequestMapping("/get")
 	public String get(@ModelAttribute ("book") String book,ModelMap model,@ModelAttribute("attributeName") String attributeName,
-			@ModelAttribute("attributeName1") String attributeName1,SessionStatus sessionStatus){
+			@ModelAttribute("attributeName1") String attributeName1,SessionStatus sessionStatus,HttpServletRequest request){
+		FlashMap flashmap = (FlashMap) RequestContextUtils.getInputFlashMap(request);  
+		flashmap.get("flashMap");
 		//可以获得book、description和price的参数
-		System.out.println(model.get("book")+";"+model.get("description")+";"+model.get("price"));
 		sessionStatus.setComplete();
-		System.out.println(attributeName);
-		System.out.println(attributeName1);
-		return "redirect:complete.action";
+		return (String) flashmap.get("flashMap");
 	}
 	
 	@RequestMapping("/complete")

@@ -181,21 +181,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 
-
-		<!--spring web portlet -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc-portlet</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
-		<!--spring websocket -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-core</artifactId>

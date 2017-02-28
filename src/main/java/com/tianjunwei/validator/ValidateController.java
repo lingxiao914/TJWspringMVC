@@ -1,29 +1,36 @@
 package com.tianjunwei.validator;
 
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
+import javax.validation.constraints.Size;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tianjunwei.validator.entity.ValidateModel;
-import com.tianjunwei.validator.service.ValidatorTestService;
 
 @Controller
 @RequestMapping(value = "/validate")
+@Validated
 public class ValidateController {
 	
+	@ResponseBody
+    @RequestMapping(value = "/validString", method = RequestMethod.GET)
+    public String validString(
+            @RequestParam(value = "str", defaultValue = "")
+            @Size(min = 1, max = 3)
+            String vStr){
+
+        return vStr;
+    }
 	
 	
     @RequestMapping(value="/form", method = {RequestMethod.GET})
